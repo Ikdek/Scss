@@ -1,5 +1,5 @@
 import './styles/App.scss'
-
+import './styles/base/theme.scss'
 
 function App() {
   return (
