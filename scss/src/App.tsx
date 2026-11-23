@@ -1,4 +1,5 @@
 import CharacterSheet from './CharacterSheet'
+import gimli from './assets/Gimli.jpg'
 import './styles/App.scss'
 import './styles/base/theme.scss'
 
@@ -6,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <CharacterSheet
+        image={gimli}
         firstName="Gimli"
         lastName="Fils de Gloin"
         characterClass="Nain"

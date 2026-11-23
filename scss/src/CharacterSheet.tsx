@@ -1,4 +1,5 @@
 import './styles/App.scss'
+import ProgressBar from './ProgressBar'
 
 type Skill = {
     name: string
@@ -73,13 +74,11 @@ function CharacterSheet({
             <div>
                 <div>
                     <p>Points de vie</p>
-                    <div></div>
-                    <p>{hp}/{maxHp}</p>
+                    <ProgressBar value={hp} max={maxHp} variant="green" />
                 </div>
                 <div>
                     <p>Points d'actions</p>
-                    <div></div>
-                    <p>{ap}/{maxAp}</p>
+                    <ProgressBar value={ap} max={maxAp} variant="blue" />
                 </div>
             </div>
             <div></div>
@@ -107,7 +106,6 @@ function CharacterSheet({
                             <i></i>
                             <div>
                                 <p>{item.name}</p>
-                                <p>{item.description}</p>
                             </div>
                         </div>
                     ))}
@@ -120,8 +118,7 @@ function CharacterSheet({
                     {stats.map((stat) => (
                         <div key={stat.name}>
                             <p>{stat.name}</p>
-                            <div></div>
-                            <p>{stat.value}</p>
+                            <ProgressBar value={stat.value} max={20} variant="red" />
                         </div>
                     ))}
                 </div>
