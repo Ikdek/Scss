@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <CharacterSheet
+        image="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Gimli.png/220px-Gimli.png"
         firstName="Gimli"
         lastName="Fils de Gloin"
         characterClass="Nain"
