@@ -1,4 +1,5 @@
 import './styles/App.scss'
+import './styles/components/CharacterSheet.scss'
 import ProgressBar from './ProgressBar'
 
 type Skill = {
@@ -52,9 +53,9 @@ function CharacterSheet({
     stats,
 }: CharacterSheetProps) {
     return (
-        <div>
+        <div className="cs-container">
             <div className="header">
-                <img src={image} alt={`${firstName} ${lastName}`}/>
+                <img className="character-image" src={image} alt={`${firstName} ${lastName}`}/>
                 <div>
                     <p>{lastName} {firstName}</p>
                     <p>{characterClass}</p>
