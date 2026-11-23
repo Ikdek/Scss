@@ -57,10 +57,10 @@ function App() {
           { name: 'Flèche de poison', description: 'Tir une flèche dont sa pointe a été trempé dans du poison (si ennemi blessé, ajoute l\'effet de poison)', icon: "" },
         ]}
         equipment={[
-          { name: 'Arc long', description: 'Distance (1d6)' },
-          { name: 'Dague', description: 'Corp à corp (1d4)' },
-          { name: 'Armure de cuir', description: '(+3 armure)' },
-          { name: 'Quarquois', description: '' },
+          { name: 'Arc long' },
+          { name: 'Dague'},
+          { name: 'Armure de cuir' },
+          { name: 'Quarquois' },
         ]}
         stats={[
           { name: 'Force', value: 9 },
