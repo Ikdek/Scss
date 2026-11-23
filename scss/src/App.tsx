@@ -6,34 +6,34 @@ function App() {
   return (
     <div className="App">
       <CharacterSheet
-        firstName="Prénom"
-        lastName="Nom"
-        characterClass="Classe"
+        firstName="Gimli"
+        lastName="Fils de Gloin"
+        characterClass="Nain"
         level={1}
-        race="Race"
-        alignment="Alignement"
-        alignmentDetail="Alignement ++"
+        race="Nain"
+        alignment="Neutral"
+        alignmentDetail="Neutral Bon"
         hp={100}
         maxHp={100}
         ap={100}
         maxAp={100}
         skills={[
-          { name: 'Comp 1', description: 'desc + dés' },
-          { name: 'Comp 2', description: 'desc + dés' },
-          { name: 'Comp 3', description: 'desc + dés' },
-          { name: 'Comp 4', description: 'desc + dés' },
+          { name: 'Coup du Marteau', description: 'Un coup puissant avec le marteau', icon: 'icon1' },
+          { name: 'Coup de Boule', description: 'Un coup avec la tête', icon: 'icon2' },
+          { name: 'Coup de Grâce', description: 'Un coup des fesses', icon: 'icon3' },
+          { name: 'Coup de Ventre', description: 'Un coup au ventre', icon: 'icon4' },  
         ]}
         equipment={[
-          { name: 'Équipement 1', description: 'desc + bonus' },
-          { name: 'Équipement 2', description: 'desc + bonus' },
-          { name: 'Équipement 3', description: 'desc + bonus' },
-          { name: 'Équipement 4', description: 'desc + bonus' },
+          { name: 'Marteau'},
+          { name: 'Casque tordu'},
+          { name: 'Ceinture en cuir'},
+          { name: 'Bottes en fer'},
         ]}
         stats={[
-          { name: 'Force', value: 10 },
-          { name: 'Dextérité', value: 10 },
-          { name: 'Intelligence', value: 10 },
-          { name: 'Charisme', value: 10 },
+          { name: 'Force', value: 18 },
+          { name: 'Dextérité', value: 2 },
+          { name: 'Intelligence', value: 3 },
+          { name: 'Charisme', value: 15 },
         ]}
       />
     </div>

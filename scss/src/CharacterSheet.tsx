@@ -8,7 +8,6 @@ type Skill = {
 
 type Equipment = {
     name: string
-    description: string
 }
 
 type Stat = {
