@@ -1,11 +1,15 @@
 import './styles/App.scss'
 import './styles/components/CharacterSheet.scss'
+import type { LucideIcon } from 'lucide-react'
 import ProgressBar from './ProgressBar'
+
+type SkillVariant = 'blue' | 'gold' | 'green' | 'purple'
 
 type Skill = {
     name: string
     description: string
-    icon?: string
+    icon: LucideIcon
+    variant?: SkillVariant
 }
 
 type Equipment = {
@@ -24,6 +28,7 @@ type CharacterSheetProps = {
     characterClass: string
     level: number
     race: string
+    description: string
     alignment: string
     alignmentDetail: string
     hp: number
@@ -42,6 +47,7 @@ function CharacterSheet({
     characterClass,
     level,
     race,
+    description,
     alignment,
     alignmentDetail,
     hp,
@@ -82,37 +88,34 @@ function CharacterSheet({
                     <ProgressBar value={ap} max={maxAp} variant="blue" />
                 </div>
             </div>
-            <div></div>
-            <div>
-                <p>Description</p>
-            </div>
-            <div></div>
-            <div>
-                <div>
-                    <p>Compétences</p>
-                    {skills.map((skill) => (
-                        <div key={skill.name}>
-                            <i>{skill.icon}</i>
+            <div className="divider"></div>
+            <p className="cs-description">{description}</p>
+            <div className="divider"></div>
+            <div className="cs-lists">
+                <div className="cs-list">
+                    <p className="cs-list__title">Compétences</p>
+                    {skills.map(({ name, description, icon: Icon, variant = 'blue' }) => (
+                        <div key={name} className={`skill skill--${variant}`}>
+                            <span className="skill__icon">
+                                <Icon size={18} />
+                            </span>
                             <div>
-                                <p>{skill.name}</p>
-                                <p>{skill.description}</p>
+                                <p className="skill__name">{name}</p>
+                                <p className="skill__description">{description}</p>
                             </div>
                         </div>
                     ))}
                 </div>
-                <div>
-                    <p>Equipement</p>
+                <div className="cs-list">
+                    <p className="cs-list__title">Équipement</p>
                     {equipment.map((item) => (
-                        <div key={item.name}>
-                            <i></i>
-                            <div>
-                                <p>{item.name}</p>
-                            </div>
+                        <div key={item.name} className="equipment">
+                            <p>{item.name}</p>
                         </div>
                     ))}
                 </div>
             </div>
-            <div></div>
+            <div className="divider"></div>
             <div>
                 <p>Statistiques</p>
                 <div className="row">
