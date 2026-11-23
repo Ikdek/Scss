@@ -36,6 +36,37 @@ function App() {
           { name: 'Charisme', value: 15 },
         ]}
       />
+      <CharacterSheet
+        firstName="Ouil"
+        lastName="Casc"
+        characterClass="Archer"
+        level={5}
+        race="Elf"
+        alignment="Loyal Neutre"
+        alignmentDetail="Royaume Elfique"
+        hp={100}
+        maxHp={100}
+        ap={100}
+        maxAp={100}
+        skills={[
+          { name: 'Tir concentré', description: 'Se concentre et effectue un tir presque inratable (+6 pour toucher, +3 au jet de dégat)', icon: "" },
+          { name: 'Dague Elfique', description: 'Sort sa dague forgé par un maitre elfe et tranche son enemi (corp à corp, +2 au dégat)', icon: "" },
+          { name: 'Triple flèche', description: 'Tir 3 flèches (-2 pour toucher, peut toucher jusque 3 enemis)', icon: "" },
+          { name: 'Flèche de poison', description: 'Tir une flèche dont sa pointe a été trempé dans du poison (si ennemi blessé, ajoute l\'effet de poison)', icon: "" },
+        ]}
+        equipment={[
+          { name: 'Arc long', description: 'Distance (1d6)' },
+          { name: 'Dague', description: 'Corp à corp (1d4)' },
+          { name: 'Armure de cuir', description: '(+3 armure)' },
+          { name: 'Quarquois', description: '' },
+        ]}
+        stats={[
+          { name: 'Force', value: 9 },
+          { name: 'Dextérité', value: 16 },
+          { name: 'Intelligence', value: 14 },
+          { name: 'Charisme', value: 10 },
+        ]}
+      />
     </div>
   )
 }
