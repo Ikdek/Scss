@@ -1,5 +1,6 @@
 import CharacterSheet from './CharacterSheet'
 import gimli from './assets/Gimli.jpg'
+import elf from './assets/elf.webp'
 import './styles/App.scss'
 import './styles/base/theme.scss'
 
@@ -39,6 +40,7 @@ function App() {
         ]}
       />
       <CharacterSheet
+        image={elf}
         firstName="Ouil"
         lastName="Casc"
         characterClass="Archer"
