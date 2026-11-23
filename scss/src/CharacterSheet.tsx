@@ -71,12 +71,12 @@ function CharacterSheet({
                     <p>{alignmentDetail}</p>
                 </div>
             </div>
-            <div>
-                <div>
+            <div className="row">
+                <div className="column">
                     <p>Points de vie</p>
                     <ProgressBar value={hp} max={maxHp} variant="green" />
                 </div>
-                <div>
+                <div className="column">
                     <p>Points d'actions</p>
                     <ProgressBar value={ap} max={maxAp} variant="blue" />
                 </div>
@@ -114,9 +114,9 @@ function CharacterSheet({
             <div></div>
             <div>
                 <p>Statistiques</p>
-                <div>
+                <div className="row">
                     {stats.map((stat) => (
-                        <div key={stat.name}>
+                        <div key={stat.name} className="column">
                             <p>{stat.name}</p>
                             <ProgressBar value={stat.value} max={20} variant="red" />
                         </div>
