@@ -1,37 +1,86 @@
 import './styles/App.scss'
 
+type Skill = {
+    name: string
+    description: string
+    icon?: string
+}
 
-function CharacterSheet() {
+type Equipment = {
+    name: string
+    description: string
+}
+
+type Stat = {
+    name: string
+    value: number
+}
+
+type CharacterSheetProps = {
+    image?: string
+    firstName: string
+    lastName: string
+    characterClass: string
+    level: number
+    race: string
+    alignment: string
+    alignmentDetail: string
+    hp: number
+    maxHp: number
+    ap: number
+    maxAp: number
+    skills: Skill[]
+    equipment: Equipment[]
+    stats: Stat[]
+}
+
+function CharacterSheet({
+    image = '',
+    firstName,
+    lastName,
+    characterClass,
+    level,
+    race,
+    alignment,
+    alignmentDetail,
+    hp,
+    maxHp,
+    ap,
+    maxAp,
+    skills,
+    equipment,
+    stats,
+}: CharacterSheetProps) {
     return (
         <div>
-            <div className={header}>
-                <img src="" alt=""/>
+            <div className="header">
+                <img src={image} alt={`${firstName} ${lastName}`}/>
                 <div>
-                    <p>Nom Prénom</p>
-                    <p>Classe</p>
+                    <p>{lastName} {firstName}</p>
+                    <p>{characterClass}</p>
                     <div>
-                        <p>Niveau</p>
-                        <p>Race</p>
+                        <p className="category">Niveau {level}</p>
+                        <p className="category">{race}</p>
                     </div>
                 </div>
             </div>
             <div>
                 <i></i>
                 <div>
-                    <p>Allignement</p>
-                    <p>Allignement ++</p>
+                    <p>{alignment}</p>
+                    <p>{alignmentDetail}</p>
                 </div>
             </div>
             <div>
                 <div>
                     <p>Points de vie</p>
                     <div></div>
-                    <p>100/100</p>
+                    <p>{hp}/{maxHp}</p>
                 </div>
                 <div>
                     <p>Points d'actions</p>
                     <div></div>
-                    <p>100/100</p>
+                    <p>{ap}/{maxAp}</p>
                 </div>
             </div>
             <div></div>
@@ -42,91 +91,40 @@ function CharacterSheet() {
             <div>
                 <div>
                     <p>Compétences</p>
-                    <div>
-                        <i></i>
-                        <div>
-                            <p>Comp 1</p>
-                            <p>desc + dés</p>
+                    {skills.map((skill) => (
+                        <div key={skill.name}>
+                            <i>{skill.icon}</i>
+                            <div>
+                                <p>{skill.name}</p>
+                                <p>{skill.description}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <i></i>
-                        <div>
-                            <p></p>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div>
-                        <i></i>
-                        <div>
-                            <p></p>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div>
-                        <i></i>
-                        <div>
-                            <p></p>
-                            <p></p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
                 <div>
                     <p>Equipement</p>
-                    <div>
-                        <i></i>
-                        <div>
-                            <p>équipement 1</p>
-                            <p>desc + bonus</p>
+                    {equipment.map((item) => (
+                        <div key={item.name}>
+                            <i></i>
+                            <div>
+                                <p>{item.name}</p>
+                                <p>{item.description}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <i></i>
-                        <div>
-                            <p></p>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div>
-                        <i></i>
-                        <div>
-                            <p></p>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div>
-                        <i></i>
-                        <div>
-                            <p></p>
-                            <p></p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
             <div></div>
             <div>
                 <p>Statistiques</p>
                 <div>
-                    <div>
-                        <p>Nom stat</p>
-                        <div></div>
-                        <p>niveau de stat</p>
-                    </div>
-                    <div>
-                        <p></p>
-                        <div></div>
-                        <p></p>
-                    </div>
-                    <div>
-                        <p></p>
-                        <div></div>
-                        <p></p>
-                    </div>
-                    <div>
-                        <p></p>
-                        <div></div>
-                        <p></p>
-                    </div>
+                    {stats.map((stat) => (
+                        <div key={stat.name}>
+                            <p>{stat.name}</p>
+                            <div></div>
+                            <p>{stat.value}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
