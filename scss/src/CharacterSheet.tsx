@@ -1,6 +1,6 @@
 import './styles/App.scss'
 import './styles/components/CharacterSheet.scss'
-import type { LucideIcon } from 'lucide-react'
+import { Shield, type LucideIcon } from 'lucide-react'
 import ProgressBar from './ProgressBar'
 
 type SkillVariant = 'blue' | 'gold' | 'green' | 'purple'
@@ -60,22 +60,22 @@ function CharacterSheet({
 }: CharacterSheetProps) {
     return (
         <div className="cs-container">
-            <div className="header">
-                <img className="character-image" src={image} alt={`${firstName} ${lastName}`}/>
+            <div className="cs-header">
+                <img className="cs-header__avatar" src={image} alt={`${firstName} ${lastName}`}/>
                 <div>
-                    <p>{lastName} {firstName}</p>
-                    <p>{characterClass}</p>
-                    <div>
-                        <p className="category">Niveau {level}</p>
-                        <p className="category">{race}</p>
+                    <p className="cs-header__name">{lastName} {firstName}</p>
+                    <p className="cs-header__class">{characterClass}</p>
+                    <div className="cs-header__badges">
+                        <span className="badge badge--gold">Niveau {level}</span>
+                        <span className="badge">{race}</span>
                     </div>
                 </div>
             </div>
-            <div>
-                <i></i>
+            <div className="faction">
+                <Shield className="faction__icon" size={22} />
                 <div>
-                    <p>{alignment}</p>
-                    <p>{alignmentDetail}</p>
+                    <p className="faction__label">{alignment}</p>
+                    <p className="faction__value">{alignmentDetail}</p>
                 </div>
             </div>
             <div className="row">
