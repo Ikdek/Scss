@@ -16,6 +16,20 @@ $skill-variants: (
     'purple': #A78BFA,
 );
 
+$rarity: (
+    common: #EFEFEF,
+    uncommon: #8AFF91,
+    rare: #A5F1FF,
+    epic: #E770FF,
+    legendary: #F1C40F,
+);
+
+@each $name, $rarity-level in $rarity {
+    .rarity-#{$name} {
+        color: $rarity-level;
+    }
+}
+
 .cs-container{
     width: 50%;
     padding: 2rem;

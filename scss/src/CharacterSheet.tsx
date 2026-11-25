@@ -15,6 +15,7 @@ type Skill = {
 
 type Equipment = {
     name: string
+    class: string
 }
 
 type Stat = {
@@ -112,8 +113,8 @@ function CharacterSheet({
                 <div className="cs-list">
                     <p className="cs-list__title">Équipement</p>
                     {equipment.map((item) => (
-                        <div key={item.name} className="equipment">
-                            <p>{item.name}</p>
+                        <div key={item.name} className="equipement">
+                            <p className={item.class}>{item.name}</p>
                         </div>
                     ))}
                 </div>

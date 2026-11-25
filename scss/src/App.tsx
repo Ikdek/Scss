@@ -4,6 +4,7 @@ import gimli from './assets/Gimli.jpg'
 import elf from './assets/elf.webp'
 import './styles/App.scss'
 import './styles/base/theme.scss'
+import './styles/components/CharacterSheet.scss'
 
 function App() {
   return (
@@ -29,10 +30,10 @@ function App() {
           { name: 'Coup de Ventre', description: 'Un coup au ventre', icon: HandFist, variant: 'purple' },
         ]}
         equipment={[
-          { name: 'Marteau'},
-          { name: 'Casque tordu'},
-          { name: 'Ceinture en cuir'},
-          { name: 'Bottes en fer'},
+          { name: 'Marteau', class: 'rarity-common' },
+          { name: 'Casque tordu', class: 'rarity-uncommon' },
+          { name: 'Ceinture en cuir', class: 'rarity-rare' },
+          { name: 'Bottes en fer', class: 'rarity-epic' },
         ]}
         stats={[
           { name: 'Force', value: 18 },
@@ -62,10 +63,10 @@ function App() {
           { name: 'Flèche de poison', description: 'Tir une flèche dont sa pointe a été trempé dans du poison (si ennemi blessé, ajoute l\'effet de poison)', icon: FlaskConical, variant: 'purple' },
         ]}
         equipment={[
-          { name: 'Arc long' },
-          { name: 'Dague'},
-          { name: 'Armure de cuir' },
-          { name: 'Quarquois' },
+          { name: 'Arc long', class: 'rarity-rare' },
+          { name: 'Dague', class: 'rarity-legendary' },
+          { name: 'Armure de cuir', class: 'rarity-uncommon' },
+          { name: 'Quarquois', class: 'rarity-epic' },
         ]}
         stats={[
           { name: 'Force', value: 9 },
