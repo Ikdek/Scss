@@ -1,5 +1,3 @@
-@use "sass:map";
-
 $card-bg: #1B2234;
 $card-border: #2A3349;
 $divider-color: #232B3E;
@@ -27,8 +25,8 @@ $rarity: (
 );
 
 @each $name, $rarity-level in $rarity {
-    .rarity-#{name} {
-        color: map.get($rarity, $rarity-level) !important;
+    .rarity-#{$name} {
+        color: $rarity-level;
     }
 }
 
