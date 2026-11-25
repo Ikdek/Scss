@@ -5,6 +5,9 @@ $title-color: #F0B429;
 $text-muted: #9CA3AF;
 $description-color: #8B93A8;
 $card-radius: 0.5rem;
+$stat-fill-duration: 0.8s;
+$stat-stagger: 0.25s;
+$stat-max: 10;
 
 $skill-variants: (
     'blue': #38BDF8,
@@ -196,4 +199,21 @@ $skill-variants: (
 .equipment {
     @extend %card;
     padding: 0.85rem 1.25rem;
+}
+
+.cs-stats {
+    .progress-bar__fill {
+        width: 0;
+        transition: width $stat-fill-duration cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    &--visible .progress-bar__fill {
+        width: var(--progress);
+    }
+
+    @for $i from 1 through $stat-max {
+        .column:nth-child(#{$i}) .progress-bar__fill {
+            transition-delay: ($i - 1) * $stat-stagger;
+        }
+    }
 }

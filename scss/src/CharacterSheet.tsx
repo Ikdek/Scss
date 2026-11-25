@@ -2,6 +2,7 @@ import './styles/App.scss'
 import './styles/components/CharacterSheet.scss'
 import { Shield, type LucideIcon } from 'lucide-react'
 import ProgressBar from './ProgressBar'
+import useInView from './useInView'
 
 type SkillVariant = 'blue' | 'gold' | 'green' | 'purple'
 
@@ -58,6 +59,8 @@ function CharacterSheet({
     equipment,
     stats,
 }: CharacterSheetProps) {
+    const { ref: statsRef, inView: statsInView } = useInView<HTMLDivElement>()
+
     return (
         <div className="cs-container">
             <div className="cs-header">
@@ -116,7 +119,7 @@ function CharacterSheet({
                 </div>
             </div>
             <div className="divider"></div>
-            <div>
+            <div ref={statsRef} className={`cs-stats${statsInView ? ' cs-stats--visible' : ''}`}>
                 <p>Statistiques</p>
                 <div className="row">
                     {stats.map((stat) => (

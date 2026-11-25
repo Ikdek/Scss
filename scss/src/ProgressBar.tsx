@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import './styles/components/ProgressBar.scss'
 
 type ProgressBarVariant = 'green' | 'blue' | 'red'
@@ -28,7 +29,7 @@ function ProgressBar({
             >
                 <div
                     className="progress-bar__fill"
-                    style={{ width: `${percent}%` }}
+                    style={{ '--progress': `${percent}%` } as CSSProperties}
                 />
             </div>
             {showLabel && (
