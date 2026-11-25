@@ -43,11 +43,11 @@ function App() {
       />
       <CharacterSheet
         image={elf}
-        firstName="Ouil"
-        lastName="Casc"
+        firstName="Jacques"
+        lastName="Ouil"
         characterClass="Archer"
         level={5}
-        description="Ouil Casc est un elfe agile et précis, spécialisé dans l'art de l'archerie. Il est connu pour sa capacité à se déplacer silencieusement à travers les forêts et à atteindre ses cibles avec une précision exceptionnelle. Sa connexion avec la nature et son sens aigu de l'observation font de lui un éclaireur redoutable et un allié précieux dans toute aventure."
+        description="Ouil Jacques est un elfe agile et précis, spécialisé dans l'art de l'archerie. Il est connu pour sa capacité à se déplacer silencieusement à travers les forêts et à atteindre ses cibles avec une précision exceptionnelle. Sa connexion avec la nature et son sens aigu de l'observation font de lui un éclaireur redoutable et un allié précieux dans toute aventure."
         race="Elf"
         alignment="Loyal Neutre"
         alignmentDetail="Royaume Elfique"
